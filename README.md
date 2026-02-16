@@ -35,15 +35,13 @@ hdoc depends on LLVM/Clang and OpenSSL, and all other dependencies are vendored 
 hdoc also comes with a Nix Flake which sets up a development environment for you with all of the needed dependencies, and should work on all Linux distributions.
 Follow the instructions below to build hdoc.
 
-#### OSX Setup via Homebrew
+#### OSX Setup via xcode is built into meson.build now
 ```sh
-brew install meson llvm 
-echo 'export PATH="/opt/homebrew/opt/llvm/bin:$PATH"' >> ~/.bash_profile
-echo 'export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"' >> ~/.bash_profile
-echo 'export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"' >> ~/.bash_profile
-echo 'export CMAKE_PREFIX_PATH="/opt/homebrew/opt/llvm"' >> ~/.bash_profile
-````
-You may need to exit your restart OSX terminal for this to take effect 
+brew install llvm
+export CC=/usr/bin/clang
+export CXX=/usr/bin/clang++
+```
+
 
 ```sh
 # Build hdoc
